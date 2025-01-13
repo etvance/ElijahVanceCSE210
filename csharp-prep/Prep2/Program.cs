@@ -9,8 +9,6 @@ class Program
         int gradePercent = int.Parse(gradePrecentText);
         Math.DivRem(gradePercent, 10, out int remainder);
 
-        System.Console.WriteLine($"{remainder}");
-
         string gradeLetter = "";
 
         if (gradePercent > 90)
