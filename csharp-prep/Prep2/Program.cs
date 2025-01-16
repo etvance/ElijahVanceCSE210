@@ -1,7 +1,9 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 class Program
 {
+    
     static void Main(string[] args)
     {
         Console.Write("What is your grade percentage?: ");
