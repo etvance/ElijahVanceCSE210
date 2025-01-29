@@ -2,8 +2,14 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void main()
     {
-        Console.WriteLine("Hello Develop02 World!");
+        // Journal
+        // Menu
+        // Prompt
+
     }
+
+
+
 }
