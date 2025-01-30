@@ -21,7 +21,7 @@ class Program
         while (_quit != true)
         {
             menu.Display();
-            Console.WriteLine("Enter Choice: ");
+            Console.Write("Enter Choice: ");
             string choice = Console.ReadLine();
             int choiceInt = Convert.ToInt32(choice);
 

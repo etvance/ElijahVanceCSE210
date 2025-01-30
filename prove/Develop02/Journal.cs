@@ -66,15 +66,12 @@ class Journal
                 foreach (Entry entry in _entries)
                 {
                     outputFile.WriteLine($"{entry._date}:---{entry._prompt}:---{entry._response}:");
-
                 }
-
-
             }
         }
         else
         {
-            System.Console.WriteLine("There aren't any changes to save.");
+            System.Console.WriteLine("There aren't any changes to save.\n");
         }
 
     }
@@ -105,7 +102,7 @@ class Journal
     {
         if (changed == false && loaded == false)
         {
-            Console.WriteLine("There is nothing to Display.");
+            Console.WriteLine("There is nothing to Display.\n2");
         }
         else if (changed == false && loaded == true)
         {

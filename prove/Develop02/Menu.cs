@@ -10,6 +10,7 @@ class Menu
         Console.WriteLine("3) Load");
         Console.WriteLine("4) Display");
         Console.WriteLine("5) Quit");
+        System.Console.WriteLine();
 
     }
 }
