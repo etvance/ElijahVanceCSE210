@@ -11,8 +11,6 @@ class Program
         Menu menu = new Menu();
         Journal journal = new Journal();
         
-        bool changed = false;
-        string _filename = "";
         List<string> dates  = [];
         List<string> prompts  = [];
         List<string> responses  = [];
@@ -36,27 +34,24 @@ class Program
             }
             else if (choiceInt == 3)
             {
-                journal.Load(dates, prompts, responses);
+                journal.Load();
             }
             else if (choiceInt == 4)
             {
-                journal.Display( changed,  _filename, dates, prompts, responses);
+                journal.Display();
             }
             else if (choiceInt == 5)
             {
+                journal.Search();
+            }
+            else if (choiceInt == 6)
+            {
+                System.Console.WriteLine("Thanks for using the program."); 
                 _quit = true;
             }
 
         }
         
-
-        // AddEntry()
-        // Load()
-            // -Prompt User for file name
-        // Save()
-            // -Prompt User for file name
-            
-        // Quit
 
 
 

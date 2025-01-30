@@ -1,6 +1,6 @@
 using System;
 
-class Entry
+public class Entry
 {
     // Variables
     public string _date = "";

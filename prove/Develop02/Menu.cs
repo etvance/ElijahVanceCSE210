@@ -1,6 +1,6 @@
 using System;
 
-class Menu
+public class Menu
 {
     public void Display()
     {
@@ -9,7 +9,8 @@ class Menu
         Console.WriteLine("2) Save");
         Console.WriteLine("3) Load");
         Console.WriteLine("4) Display");
-        Console.WriteLine("5) Quit");
+        Console.WriteLine("5) Search");
+        Console.WriteLine("6) Quit");
         System.Console.WriteLine();
 
     }
