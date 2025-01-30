@@ -4,7 +4,7 @@ class Menu
 {
     public void Display()
     {
-        Console.WriteLine("Menu");
+        Console.WriteLine("Menu:");
         Console.WriteLine("1) Add Entry");
         Console.WriteLine("2) Save");
         Console.WriteLine("3) Load");

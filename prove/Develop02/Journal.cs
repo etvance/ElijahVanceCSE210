@@ -41,6 +41,7 @@ class Journal
         System.Console.WriteLine("Journal Entry: ");
         string response = Console.ReadLine();
         newEntry._response = response;
+        System.Console.WriteLine();
 
 
         _entries.Add(newEntry);
@@ -102,7 +103,7 @@ class Journal
     {
         if (changed == false && loaded == false)
         {
-            Console.WriteLine("There is nothing to Display.\n2");
+            Console.WriteLine("There is nothing to Display.\n");
         }
         else if (changed == false && loaded == true)
         {
@@ -110,6 +111,7 @@ class Journal
             int z = 0;
             foreach (string date in dates)
             {
+                System.Console.WriteLine();
                 Console.Write($"{dates[z]}: {prompts[z]}\n  --{responses[z]}\n\n");
                 z += 1;
             }
@@ -118,6 +120,7 @@ class Journal
         {
             foreach (Entry entry in _entries)
                 {
+                    System.Console.WriteLine();
                     System.Console.WriteLine($"{entry._date}:\n{entry._prompt}\n  --{entry._response}\n\n");
                 }
         }
