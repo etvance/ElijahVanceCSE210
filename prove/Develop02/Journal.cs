@@ -5,58 +5,38 @@ using System.IO.Compression;
 
 public class Journal
 {
-    // vars
-    // File name <string>
-    // Entries: list<Entry>
     List<Entry> _entries = new List<Entry>();
     List<Entry> _loaded_entries = new List<Entry>();
     string _fileName = "";
     bool changed = false;
     bool loaded = false;
 
-
-    
-    // methods
-
-
-    public bool AddEntry()
+    public void AddEntry()
     {
         Entry newEntry = new Entry();
-
         PromptMan _entryPrompt = new PromptMan();
-        
-        string prompt = Convert.ToString(_entryPrompt);
 
         Console.WriteLine("Enter Date(mm/dd/yyyy): ");
         string date = Console.ReadLine();
         newEntry._date = date;
 
         Console.WriteLine("Here is todays prompt:");
-        prompt = _entryPrompt.GetRandomPrompt();
+        string prompt = _entryPrompt.GetRandomPrompt();
         Console.WriteLine($"{prompt}");
         newEntry._prompt = prompt;
 
         System.Console.WriteLine("Journal Entry: ");
         string response = Console.ReadLine();
         newEntry._response = response;
-        System.Console.WriteLine();
-
+        System.Console.WriteLine();//for spacing
 
         _entries.Add(newEntry);
         changed = true;
-        return changed;
     }
-    //Write AddEntry
-        // -Get prompt
-        // -Display Prompt
-        // -Get Date
-        // -Get Response
-        // -Create Entry
-        // -Save to list in journal
 
     public void Save()
     {
-        if (changed == true)
+        if (changed == true)//actually stuff to save
         {
             System.Console.Write("Where do you want to save the journal?(____.txt): ");
             _fileName = Console.ReadLine();
@@ -72,11 +52,10 @@ public class Journal
         {
             System.Console.WriteLine("There aren't any changes to save.\n");
         }
-
     }
     public void Load()
     {
-        Entry loadedEntry = new Entry();
+        
         System.Console.Write("Where do you want to load the journal from?(____.txt): ");
         _fileName = Console.ReadLine();
 
@@ -84,6 +63,7 @@ public class Journal
 
         foreach (string line in lines)
         {
+            Entry loadedEntry = new Entry();
             string[] parts = line.Split(":---");
 
             string date = parts[0];
@@ -96,12 +76,10 @@ public class Journal
             _loaded_entries.Add(loadedEntry);
         }
         loaded = true;
-        
-        
     }
     public void Display()
     {
-        if (changed == true && loaded == true)
+        if (changed == true || loaded == true)
         {
             foreach (Entry entry in _loaded_entries)
             {
@@ -117,66 +95,35 @@ public class Journal
         else if (changed == false && loaded == false)
         {
             Console.WriteLine("There is nothing to Display. Please Load a file or Add an Entry.\n");
-        }
-        else if (changed == true && loaded == false)
-        {
-            foreach (Entry entry in _entries)
-                {
-                    System.Console.WriteLine();
-                    System.Console.WriteLine($"{entry._date}:\n{entry._prompt}\n  --{entry._response}\n\n");
-                }
-        }
-        else if (changed == false && loaded == true)
-        {
-
-            foreach (Entry entry in _loaded_entries)
-            {
-                System.Console.WriteLine();
-                Console.Write($"{entry._date}: {entry._prompt}\n  --{entry._response}\n\n");
-            }
-        }
-        
-        
-
+        }   
     }
     public void Search()
     {
-        if (loaded == true || changed == true)
+        if (loaded == true || changed == true)//Is there stuff to search though?
         {
             Console.Write("What date would you like to look for?(mm/dd/yyyy): ");
             string search_date = Console.ReadLine();
             foreach (Entry entry in _loaded_entries)
             {
-                string date = entry._date;
-                System.Console.WriteLine($"---------{date}---------");
-                if ( entry._date == search_date)
+                if (entry._date == search_date)
                 {
                     Console.Write($"{entry._date}: {entry._prompt}\n  --{entry._response}\n\n");
                     Console.WriteLine();
-                } 
-
+                }
             }
+            //Put the loaded Entries before the newly created entries
             foreach (Entry entry in _entries)
             {
-                string date = entry._date;
-                System.Console.WriteLine($"---------{date}---------");
                 if ( entry._date == search_date)
                 {
                     Console.Write($"{entry._date}: {entry._prompt}\n  --{entry._response}\n\n");
                     Console.WriteLine();
-                } 
-
+                }
             }
         }
         else
         {
             Console.WriteLine("There is nothing to search. Please Load a file to try again.");
         }
-
     }
-    
-
-
-    
-
 }
