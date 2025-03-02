@@ -14,7 +14,8 @@ public class Menu
 
     public void DisplayFinishMenu()
     {
-        Console.WriteLine("You have completed at least one of each activity today! Would you like to:");
+        Console.Clear();
+        Console.WriteLine("You have completed one of each activity today! Would you like to:");
         Console.WriteLine(" 1) Continue Participating in Activities\nor");
         Console.WriteLine(" 2) Quit");
     }
