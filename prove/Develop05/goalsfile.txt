@@ -1,0 +1,3 @@
+150 SimpleGoal:Push-ups,Do 20 push-ups in one sitting,30,False
+150 EternalGoal:Temple attendance,Attend the temple for any reason,100,
+150 CheckListGoal:Daily excersise,Do any excersise for 30 minutes,50,5000,365,1,False
