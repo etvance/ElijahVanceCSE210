@@ -16,16 +16,19 @@ public class Running:Activity
 
     public override double CalcSpeed()
     {
-        return (_distance / _length) * 60;
+        double speed = (_distance / _length) * 60;
+        return speed;
     }
 
     public override double CalcPace()
     {
-        return _length / _distance;
+        double pace = _length / _distance;
+        return pace;
     }
 
     public override string GetSummary()
     {
-        return $"{_date} Running({_length})- Distance: {_distance} miles, Speed: {Math.Round(CalcSpeed(), 2)} mph, Pace: {Math.Round(CalcPace(), 2)} min/mile";
+        string summary = $"{_date} Running({_length})- Distance: {_distance} miles, Speed: {Math.Round(CalcSpeed(), 2)} mph, Pace: {Math.Round(CalcPace(), 2)} min/mile";
+        return summary;
     }
 }

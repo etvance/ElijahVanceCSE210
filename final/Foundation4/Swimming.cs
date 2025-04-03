@@ -30,6 +30,7 @@ public class Swimming:Activity
 
     public override string GetSummary()
     {
-        return $"{_date} Swimming({_length})- Distance: {Math.Round(CalcDistance(), 2)} Miles, Speed: {Math.Round(CalcSpeed(), 2)} mph, Pace: {Math.Round(CalcPace(), 2)} min/mile";
+        string summary = $"{_date} Swimming({_length})- Distance: {Math.Round(CalcDistance(), 2)} Miles, Speed: {Math.Round(CalcSpeed(), 2)} mph, Pace: {Math.Round(CalcPace(), 2)} min/mile";
+        return summary;
     }
 }
